@@ -34,9 +34,20 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'pry'
 gem 'rspec-rails'
-gem 'twitter-bootstrap-rails'
-gem 'bcrypt'
+
 gem 'devise'
+gem 'bcrypt'
+
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
+gem 'bootstrap3-rails', '~> 3.2'
+gem 'twitter-bootstrap-rails'
+gem "therubyracer"
+
+
+group :assets do
+    gem 'jquery-ui-rails'
+end
 
 group :production do
   gem 'pg'
