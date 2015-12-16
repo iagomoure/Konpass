@@ -8,12 +8,43 @@
 		<div class="col-md-8 col-sm-8 left-container">
 			<div class="poi-title">
 				<div class="filters">
-					<button class="btn btn-info btn-how-it-work" type="submit">Filters</button>
+					<button class="btn btn-info btn-how-it-work js-filters" type="submit">Filters</button>
 				</div>
 				<div class="city">
 					<h5>Adventure choose <%= @city.name %></h5>
 				</div>
 			</div>
+
+					<div class="filters-box hidden">
+						<form>
+							<label>
+								Choose your feelings:
+							</label>
+							<div class="btn-filter btn-default">
+								<div class="checkbox">
+							    <label>
+							      <input type="checkbox"> Monuments
+							    </label>
+							  </div>
+							</div>
+							<div  class="btn-filter btn-default">
+								<div class="checkbox">
+							    <label>
+							      <input type="checkbox"> Arquitecture
+							    </label>
+							  </div>
+							</div>
+							<div class="btn-filter btn-default">
+								<div class="checkbox">
+							    <label>
+							      <input type="checkbox"> Art & Museum
+							    </label>
+							  </div>
+							</div>
+						</form>
+					</div>
+
+
 				<% @day = 1 %>
 	  		<% @date.times do |t| %>
 					<div class="poi-district">

@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  $('.js-filters').on('click',function(event){
+    $('.filters-box').toggleClass('hidden');
+  });
 
   $.ajax({
     url: window.location.href,
@@ -16,6 +19,7 @@ $(document).ready(function() {
     	center: new google.maps.LatLng(data.city.latitude, data.city.longitude),
     	MapTypeId: google.maps.MapTypeId.ROADMAP
     });
+
     var locations = [];
     for (var j = 0; j < data.days; j++){
       for (var k = 0; k < data.poi[j].points.length; k++){
@@ -24,14 +28,14 @@ $(document).ready(function() {
         array.push(data.poi[j].points[k].latitude);
         array.push(data.poi[j].points[k].longitude);
         array.push(k);
-        locations.push(array)
+        locations.push(array);
       }
     }
 
-  	var infowindow = new google.maps.InfoWindow();
-  	var marker, i;
+  	// var infowindow = new google.maps.InfoWindow();
+  	// var marker, i;
 
-  	for (i = 0; i < locations.length; i++){
+  	for (var i = 0; i < locations.length; i++){
   		var marker = new google.maps.Marker({
   			position: new google.maps.LatLng(locations[i][1],locations[i][2]),
   			map: map
