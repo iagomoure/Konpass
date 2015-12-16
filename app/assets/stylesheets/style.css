@@ -116,7 +116,7 @@ nav ul li a:hover{
 }
 nav ul li a:focus{
   text-decoration: none;
-  color: #9E9E9E;
+	color: #31b0d5;
 }
 nav ul li a:visited{
   color: #31b0d5;

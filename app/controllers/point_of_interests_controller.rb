@@ -15,7 +15,10 @@ class PointOfInterestsController < ApplicationController
       if @date == 0
         redirect_to '/'
       end
-
+       respond_to do |format|
+         format.json{render json: {days: @date, city: @city, poi: @filterpois}, status: 201}
+         format.html{render 'index'}
+      end
     end
   end
 

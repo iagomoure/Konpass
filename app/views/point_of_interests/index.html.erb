@@ -3,7 +3,6 @@
 	<div id="status">&nbsp;</div>
 </div>
 
-
 <div class="ground">
 	<div class="mapping-container">
 		<div class="col-md-8 col-sm-8 left-container">
@@ -15,21 +14,22 @@
 					<h5>Adventure choose <%= @city.name %></h5>
 				</div>
 			</div>
+			<% @day = 1 %>
   		<% @date.times do |t| %>
 				<div class="poi-district">
-					<p><p>Day <%= @date %> - <strong><%= @filterpois[t][:district] %></strong></p>
-					<% @date = @date - 1 %>
+					<p>Day <%= @day %> - <strong><%= @filterpois[t][:district] %></strong></p>
+					<% @day = @day + 1 %>
 				</div>
 				<% @filterpois[t][:points].each do |poi| %>
 					<div class="poi-item">
 						<div class="poi-image">
 							<div class="poi-holder">
-								Universidad Laboral
+								<strong><%= poi.name %></stong>
 							</div>
 						</div>
 						<div class="poi-info">
 							<div class="up-poi-info">
-  							<%= poi.name %>
+  							<%= poi.description %>
 								<%= poi.rating %>
 								<br><img src="http://cdn1.waynabox.com/img/mailing/star-4.png" class="stars">
 							</div>
@@ -45,6 +45,7 @@
 								<div class="element-poi-info">
 									<div class="extra">
 										<%= poi.description %>
+
 									</div>
 								</div>
 							</div>

@@ -11,13 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209155220) do
+ActiveRecord::Schema.define(version: 20151215161427) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "poi_tags", force: :cascade do |t|
@@ -39,6 +41,8 @@ ActiveRecord::Schema.define(version: 20151209155220) do
     t.datetime "updated_at",  null: false
     t.string   "images"
     t.integer  "rating"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "point_of_interests", ["city_id"], name: "index_point_of_interests_on_city_id"
