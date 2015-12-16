@@ -14,46 +14,47 @@
 					<h5>Adventure choose <%= @city.name %></h5>
 				</div>
 			</div>
-			<% @day = 1 %>
-  		<% @date.times do |t| %>
-				<div class="poi-district">
-					<p>Day <%= @day %> - <strong><%= @filterpois[t][:district] %></strong></p>
-					<% @day = @day + 1 %>
-				</div>
-				<% @filterpois[t][:points].each do |poi| %>
-					<div class="poi-item">
-						<div class="poi-image">
-							<div class="poi-holder">
-								<strong><%= poi.name %></stong>
-							</div>
-						</div>
-						<div class="poi-info">
-							<div class="up-poi-info">
-  							<%= poi.description %>
-								<%= poi.rating %>
-								<br><img src="http://cdn1.waynabox.com/img/mailing/star-4.png" class="stars">
-							</div>
-							<div class="down-poi-info">
-								<div class="horizontal-div"></div>
-								<div class="element-poi-info">
-									<img src="http://waynabox.com/images/icons/tripadvisor.png">
-						 			<div class="extra">
-										de 5 sobre <br> 4 opiniones
-									</div>
-						 			<div class="extra-separator"></div>
-								</div>
-								<div class="element-poi-info">
-									<div class="extra">
-										<%= poi.description %>
-
-									</div>
-								</div>
-							</div>
-						</div>
+				<% @day = 1 %>
+	  		<% @date.times do |t| %>
+					<div class="poi-district">
+						<p>Day <%= @day %> - <strong><%= @filterpois[t][:district] %></strong></p>
+						<% @day = @day + 1 %>
 					</div>
-  			<% end %>
-		<% end %>
-		</div>
+					<% @filterpois[t][:points].each do |poi| %>
+						<div class="poi-item">
+							<div class="poi-image">
+								<div class="poi-holder">
+									<strong><%= poi.name %></stong>
+								</div>
+							</div>
+							<div class="poi-info">
+								<div class="up-poi-info">
+	  							<%= poi.description %>
+									<br><%= poi.rating %>
+									<img src="http://cdn1.waynabox.com/img/mailing/star-4.png" class="stars">
+
+								</div>
+								<div class="down-poi-info">
+									<div class="horizontal-div"></div>
+									<div class="element-poi-info">
+										<img src="http://waynabox.com/images/icons/tripadvisor.png">
+							 			<div class="extra">
+											de 5 sobre <br> 4 opiniones
+										</div>
+							 			<div class="extra-separator"></div>
+									</div>
+									<div class="element-poi-info">
+										<div class="extra">
+											<%= poi.description %>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+	  			<% end %>
+			<% end %>
+	</div>
 		<div class="col-md-4 col-sm-4 right-container">
 			<div id="map" style="width: 200px; height: 400px;">
 			</div>

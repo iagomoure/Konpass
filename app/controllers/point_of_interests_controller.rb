@@ -12,12 +12,17 @@ class PointOfInterestsController < ApplicationController
       @filterpois = PointOfInterest.district_by_rating(@pointsofinterest)
 
       @date = calculate_days(params[:arrival],params[:departure])
-      if @date == 0
+
+      @date = @date <= @filterpois.size ? @date : @filterpois.size
+
+      if @date == 0 || @date == "" || @date < 0
+        flash[:alert] = "Dates are incorrect"
         redirect_to '/'
-      end
+      else
        respond_to do |format|
          format.json{render json: {days: @date, city: @city, poi: @filterpois}, status: 201}
          format.html{render 'index'}
+        end
       end
     end
   end

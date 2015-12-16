@@ -30,27 +30,20 @@ $(document).ready(function() {
 
 });
 
-function validateForm() {
-  var cityname = document.forms['home-search']['city'].value;
-    if ( cityname === null || cityname === "") {
-        alert("Name must be filled out");
-        return false;
-    }
-}
-
-
-  // //Smooth scroll
-  //
-  //   $('a[href*=#]:not([href=#])').click(function () {
-  //     console.log("hi");
-  //     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-  //       var target = $(this.hash);
-  //       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-  //       if (target.length) {
-  //         $('html,body').animate({
-  //           scrollTop: target.offset().top
-  //         }, 1000);
-  //         return false;
-  //       }
-  //     }
-  //   });
+// function validateForm() {
+//   var cityname = document.forms['home-search']['city'].value;
+//     if ( cityname === null || cityname === "") {
+//         alert("Name must be filled out");
+//         return false;
+//     }
+  // var datearrival = document.forms['home-search']['arrival'].value;
+  //   if ( datearrival === null || datearrival === "") {
+  //       alert("Name must be filled out");
+  //       return false;
+  //   }
+  // var datedeparture = document.forms['home-search']['departure'].value;
+  //   if ( datedeparture === null || datedeparture === "") {
+  //       alert("Name must be filled out");
+  //       return false;
+  //   }
+//}
