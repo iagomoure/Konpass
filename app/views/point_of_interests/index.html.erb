@@ -30,9 +30,10 @@
 							<div class="poi-info">
 								<div class="up-poi-info">
 	  							<%= poi.description %>
-									<br><%= poi.rating %>
-									<img src="http://cdn1.waynabox.com/img/mailing/star-4.png" class="stars">
-
+									<br>
+									<% poi.rating.times do |star| %>
+										<img src="http://cdn1.waynabox.com/img/mailing/star-1.png" class="stars">
+									<% end %>
 								</div>
 								<div class="down-poi-info">
 									<div class="horizontal-div"></div>
